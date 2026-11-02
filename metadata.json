@@ -1,0 +1,6 @@
+{
+  "name": "ARVI ONLINE & CSC",
+  "description": "આર્વી ઓનલાઈન & CSC – જન સુવિધા કેન્દ્ર, ખોડાણા, પાટણ, ગુજરાત. સરકારી યોજનાઓ, પ્રમાણપત્રો, પાન કાર્ડ, આયુષ્માન કાર્ડ અને ડિજિટલ સેવાઓ.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

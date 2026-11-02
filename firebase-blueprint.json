@@ -1,0 +1,121 @@
+{
+  "entities": {
+    "Service": {
+      "title": "Service",
+      "description": "CSC and e-Governance service offerings provided by ARVI ONLINE & CSC",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "category": { "type": "string", "maxLength": 64 },
+        "gujaratiName": { "type": "string", "maxLength": 150 },
+        "englishName": { "type": "string", "maxLength": 150 },
+        "fee": { "type": "number" },
+        "processingTime": { "type": "string", "maxLength": 100 },
+        "requiredDocuments": { "type": "string", "maxLength": 1000 },
+        "descriptionGu": { "type": "string", "maxLength": 1500 },
+        "descriptionEn": { "type": "string", "maxLength": 1500 },
+        "icon": { "type": "string", "maxLength": 50 },
+        "active": { "type": "boolean" },
+        "order": { "type": "number" }
+      },
+      "required": ["id", "category", "gujaratiName", "englishName", "fee", "active"]
+    },
+    "Application": {
+      "title": "Application",
+      "description": "Citizen application for CSC service at ARVI ONLINE & CSC",
+      "type": "object",
+      "properties": {
+        "applicationId": { "type": "string", "maxLength": 64, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "customerName": { "type": "string", "maxLength": 150 },
+        "mobile": { "type": "string", "maxLength": 15 },
+        "village": { "type": "string", "maxLength": 100 },
+        "serviceId": { "type": "string", "maxLength": 64 },
+        "serviceName": { "type": "string", "maxLength": 150 },
+        "fee": { "type": "number" },
+        "notes": { "type": "string", "maxLength": 1000 },
+        "documentName": { "type": "string", "maxLength": 200 },
+        "status": {
+          "type": "string",
+          "enum": ["SUBMITTED", "IN_PROGRESS", "COMPLETED", "REJECTED"]
+        },
+        "paymentStatus": {
+          "type": "string",
+          "enum": ["PENDING", "PAID", "VERIFIED", "FAILED"]
+        },
+        "paymentUtr": { "type": "string", "maxLength": 100 },
+        "adminRemarks": { "type": "string", "maxLength": 1000 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["applicationId", "customerName", "mobile", "serviceId", "serviceName", "status", "paymentStatus"]
+    },
+    "Scheme": {
+      "title": "Scheme",
+      "description": "Government scheme or recruitment announcement published for citizens",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "type": { "type": "string", "enum": ["SCHEME", "RECRUITMENT", "FARMER", "EDUCATION", "ANNOUNCEMENT"] },
+        "titleGu": { "type": "string", "maxLength": 200 },
+        "titleEn": { "type": "string", "maxLength": 200 },
+        "department": { "type": "string", "maxLength": 150 },
+        "deadline": { "type": "string", "maxLength": 50 },
+        "detailsGu": { "type": "string", "maxLength": 2000 },
+        "detailsEn": { "type": "string", "maxLength": 2000 },
+        "link": { "type": "string", "maxLength": 500 },
+        "active": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "type", "titleGu", "titleEn", "active"]
+    },
+    "Setting": {
+      "title": "Setting",
+      "description": "Store contact details, UPI address, and homepage banner configurations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 64 },
+        "ownerName": { "type": "string", "maxLength": 100 },
+        "contactPhone": { "type": "string", "maxLength": 20 },
+        "whatsappNumber": { "type": "string", "maxLength": 20 },
+        "upiId": { "type": "string", "maxLength": 100 },
+        "location": { "type": "string", "maxLength": 200 },
+        "bannerNotice": { "type": "string", "maxLength": 500 },
+        "visitorCount": { "type": "number" }
+      },
+      "required": ["id"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Authorized administrative user accounts",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "maxLength": 150 },
+        "role": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/services/{serviceId}": {
+      "schema": { "$ref": "#/entities/Service" },
+      "description": "Catalog of CSC and government digital services"
+    },
+    "/applications/{applicationId}": {
+      "schema": { "$ref": "#/entities/Application" },
+      "description": "Online service applications submitted by citizens or tracked by ID"
+    },
+    "/schemes/{schemeId}": {
+      "schema": { "$ref": "#/entities/Scheme" },
+      "description": "Latest updates, recruitment notifications, and farmer welfare schemes"
+    },
+    "/settings/{settingId}": {
+      "schema": { "$ref": "#/entities/Setting" },
+      "description": "Center settings, UPI details, announcement banner, visitor counter"
+    },
+    "/admins/{adminId}": {
+      "schema": { "$ref": "#/entities/Admin" },
+      "description": "Admin authorization mapping for center operator"
+    }
+  }
+}
