@@ -128,7 +128,7 @@ export default function ContactFooter({ visitorCount = 14850 }: ContactFooterPro
 
               <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/80 text-xs">
                 <span className="text-[11px] text-slate-400 block mb-1">UPI પેમેન્ટ ID:</span>
-                <span className="font-mono font-bold text-amber-300">7265013972@upi</span>
+                <span className="font-mono font-bold text-amber-300">7265013972sonu@ybl</span>
               </div>
             </div>
           </div>
