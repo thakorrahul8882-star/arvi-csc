@@ -11,7 +11,7 @@ export default function TestimonialsSection() {
     {
       name: 'રમેશભાઈ ચૌધરી',
       nameEn: 'Rameshbhai Chaudhary',
-      village: 'ખોડાણા (પાટણ)',
+      village: 'પાટણ',
       service: 'ખેડૂત નોંધણી & ટ્રેક્ટર સહાય',
       text: 'રાહુલભાઈએ ikhedut પોર્ટલ પર ટ્રેક્ટર સબસિડીનું ફોર્મ એક જ દિવસમાં ભરી આપ્યું. કોઈ પણ ભૂલ વગર મંજૂરી મળી ગઈ. ખૂબ જ પ્રમાણિક કામ છે.',
       textEn: 'Rahul Thakor helped me apply for the tractor subsidy on ikhedut within a single day. No errors, got approved quickly.',
