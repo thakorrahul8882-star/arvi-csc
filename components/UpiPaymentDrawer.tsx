@@ -25,7 +25,7 @@ export default function UpiPaymentDrawer({
   applicationId,
   serviceName,
   onPaymentSubmitted,
-  upiId = '7265013972@upi',
+  upiId = '7265013972sonu@ybl',
 }: UpiPaymentDrawerProps) {
   const { language, t } = useLanguage();
   const [copied, setCopied] = useState(false);
