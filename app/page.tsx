@@ -211,7 +211,7 @@ function HomePageContent() {
           onSuccess={(newApp) => {
             console.log('Application created successfully:', newApp.applicationId);
           }}
-          upiId={settings.upiId || '7265013972@upi'}
+          upiId={settings.upiId || '7265013972sonu@ybl'}
         />
       )}
 
